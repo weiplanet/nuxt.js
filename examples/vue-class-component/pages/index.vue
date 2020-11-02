@@ -1,5 +1,5 @@
 <template>
-  <Child :env="env" ></Child>
+  <Child :env="env" />
 </template>
 
 <script>
@@ -7,11 +7,12 @@ import Vue from 'vue'
 import Component from 'nuxt-class-component'
 import Child from '@/components/Child'
 
+export default
 @Component({
   components: { Child }
 })
-export default class App extends Vue {
-  asyncData({ req }) {
+class App extends Vue {
+  asyncData ({ req }) {
     return { env: req ? 'server' : 'client' }
   }
 }

@@ -4,8 +4,8 @@
 
 <script>
 export default {
-  fetch({ redirect }) {
-    return redirect({name: 'stateless'})
+  middleware ({ redirect }) {
+    return redirect({ name: 'stateless' })
   }
 }
 </script>

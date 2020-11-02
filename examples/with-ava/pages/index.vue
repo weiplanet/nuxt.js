@@ -1,10 +1,12 @@
 <template>
-  <h1 class="red">Hello {{ name }}!</h1>
+  <h1 class="red">
+    Hello {{ name }}!
+  </h1>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return { name: 'world' }
   }
 }

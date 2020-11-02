@@ -1,18 +1,26 @@
 <template>
   <div class="container">
-    <p><button @click="showLoginError">Notif me!</button></p>
-    <p>Home - <nuxt-link to="/about">About</nuxt-link></p>
+    <p>
+      <button @click="showLoginError">
+        Notif me!
+      </button>
+    </p>
+    <p>
+      Home - <NuxtLink to="/about">
+        About
+      </NuxtLink>
+    </p>
   </div>
 </template>
 
 <script>
 let miniToastr
-if (process.browser) {
-  miniToastr = require('mini-toastr')
+if (process.client) {
+  miniToastr = require('mini-toastr').default
 }
 
 export default {
-  mounted() {
+  mounted () {
     miniToastr.init()
   },
   notifications: {

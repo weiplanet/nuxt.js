@@ -1,10 +1,11 @@
-module.exports = {
+export default {
   /*
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
-  mode: 'spa',
-  plugins: ['~plugins/buefy'],
+  modules: [
+    'nuxt-buefy'
+  ],
   router: {
     linkActiveClass: 'is-active'
   }

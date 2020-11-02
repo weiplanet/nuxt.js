@@ -4,8 +4,8 @@
 
 <script>
 export default {
-  asyncData({ error }) {
-    error({ message: 'Custom error' })
+  asyncData ({ error }) {
+    error({ message: 'Custom error', customProp: 'ezpz' })
   }
 }
 </script>

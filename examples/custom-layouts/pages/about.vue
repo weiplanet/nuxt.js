@@ -1,14 +1,16 @@
 <template>
   <div>
     <p>Hi from {{ name }}</p>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <NuxtLink to="/">
+      Home page
+    </NuxtLink>
   </div>
 </template>
 
 <script>
 export default {
   layout: 'dark',
-  asyncData({ req }) {
+  asyncData ({ req }) {
     return {
       name: req ? 'server' : 'client'
     }

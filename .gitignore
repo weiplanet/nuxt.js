@@ -1,27 +1,38 @@
 # Dependencies
 node_modules
-examples/**/*/yarn.lock
 jspm_packages
+
+# Only keep yarn.lock in the root
 package-lock.json
+*/**/yarn.lock
 
 # Logs
 *.log
-npm-debug.log*
+
+# Packages
+packages/*/LICENSE
+
+# Distributions
+distributions/*/LICENSE
 
 # Other
 .nuxt*
+!.nuxtignore
+!.nuxtrc
 .cache
 
-# Dist folder
+# Dist folders
 dist
 
-# Dist example generation
-examples/**/dist
+# Junit reports
+reports
 
-# Coverage support
+# Coverage reports
 coverage
 *.lcov
 .nyc_output
+
+# VSCode
 .vscode
 
 # Intellij idea
@@ -29,7 +40,7 @@ coverage
 .idea
 
 # OSX
-*.DS_Store
+.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -48,3 +59,4 @@ coverage
 Network Trash Folder
 Temporary Items
 .apdisk
+CHANGELOG.md

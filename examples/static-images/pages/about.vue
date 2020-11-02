@@ -1,15 +1,19 @@
 <template>
   <div class="container">
-    <img src="~static/nuxt-black.png" />
+    <img src="~static/nuxt-black.png">
     <h2>Thank you for testing nuxt.js</h2>
     <p>Loaded from the {{ name }}</p>
-    <p><nuxt-link to="/">Back home</nuxt-link></p>
+    <p>
+      <NuxtLink to="/">
+        Back home
+      </NuxtLink>
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  asyncData({ req }) {
+  asyncData ({ req }) {
     return {
       name: req ? 'server' : 'client'
     }

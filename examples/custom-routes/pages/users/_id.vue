@@ -3,7 +3,11 @@
     <h3>{{ name }}</h3>
     <h4>@{{ username }}</h4>
     <p>Email : {{ email }}</p>
-    <p><nuxt-link to="/">List of users</nuxt-link></p>
+    <p>
+      <NuxtLink to="/">
+        List of users
+      </NuxtLink>
+    </p>
   </div>
 </template>
 
@@ -11,10 +15,10 @@
 import axios from 'axios'
 
 export default {
-  validate({ params }) {
+  validate ({ params }) {
     return !isNaN(+params.id)
   },
-  async asyncData({ params, error }) {
+  async asyncData ({ params, error }) {
     try {
       const { data } = await axios.get(`https://jsonplaceholder.typicode.com/users/${+params.id}`)
       return data

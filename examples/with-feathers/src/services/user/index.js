@@ -1,11 +1,9 @@
-'use strict'
+import path from 'path'
+import NeDB from 'nedb'
+import service from 'feathers-nedb'
+import hooks from './hooks'
 
-const path = require('path')
-const NeDB = require('nedb')
-const service = require('feathers-nedb')
-const hooks = require('./hooks')
-
-module.exports = function () {
+export default function () {
   const app = this
 
   const db = new NeDB({
@@ -13,7 +11,7 @@ module.exports = function () {
     autoload: true
   })
 
-  let options = {
+  const options = {
     Model: db,
     paginate: {
       default: 5,

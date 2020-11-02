@@ -1,3 +1,1 @@
-# Cached Components
-
-https://nuxtjs.org/examples/cached-components
+# Nuxt with Cached Components using lru-cache

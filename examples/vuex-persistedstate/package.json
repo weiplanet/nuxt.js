@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-vuex-store",
+  "name": "example-persisted-state",
   "dependencies": {
     "nuxt": "latest",
     "vuex-persistedstate": "^2.0.0"
@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   }
 }

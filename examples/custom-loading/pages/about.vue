@@ -1,13 +1,15 @@
 <template>
   <div class="container">
     <p>About Page</p>
-    <nuxt-link to="/">Go to /</nuxt-link>
+    <NuxtLink to="/">
+      Go to /
+    </NuxtLink>
   </div>
 </template>
 
 <script>
 export default {
-  asyncData() {
+  asyncData () {
     return new Promise((resolve) => {
       setTimeout(function () {
         resolve({})

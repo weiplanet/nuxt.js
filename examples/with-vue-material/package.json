@@ -1,5 +1,5 @@
 {
-  "name": "with-vue-material",
+  "name": "example-with-vue-material",
   "version": "1.0.0",
   "dependencies": {
     "nuxt": "latest",
@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   }
 }

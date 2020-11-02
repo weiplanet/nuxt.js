@@ -5,14 +5,12 @@
 
   Data model is: {{ model }}
 
-  <nuxt-link to="/about">Goto About</nuxt-link>
-
-  <nuxt-link to="/pug">Goto Pug</nuxt-link>
+  <NuxtLink to="/about">Goto About</NuxtLink>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       model: 'I am index'
     }

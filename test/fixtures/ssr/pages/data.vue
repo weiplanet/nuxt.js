@@ -1,12 +1,12 @@
 <template>
-<foobar>{{id}}</foobar>
+  <Foobar>{{ id }}</Foobar>
 </template>
 
 <script>
 import { nextId } from '@/lib/db'
 
 export default {
-  data() {
+  data () {
     return {
       id: nextId()
     }

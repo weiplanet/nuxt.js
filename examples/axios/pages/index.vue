@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Dog</h1>
-    <img :src="dog" />
+    <img :src="dog">
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 
 export default {
 
-  async asyncData({ app }) {
+  async asyncData ({ app }) {
     const { data: { message: dog } } = await app.$axios.get('/dog')
     return { dog }
   }

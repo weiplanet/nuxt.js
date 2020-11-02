@@ -1,7 +1,7 @@
 {
-  "name": "auth-routes",
+  "name": "example-auth-routes",
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.19.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   }
 }

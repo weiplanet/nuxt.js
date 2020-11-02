@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-markdownit",
+  "name": "example-markdownit",
   "version": "1.0.0",
   "dependencies": {
     "@nuxtjs/markdownit": "^1.1.2",
@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   },
   "devDependencies": {
     "jstransformer-markdown-it": "^2.0.0"

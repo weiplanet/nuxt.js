@@ -3,13 +3,15 @@
     <ul class="pages">
       <li class="chat page">
         <div class="chatArea">
-          <ul class="messages" ref="messages">
-            <li class="message" v-for="(message, index) in messages" :key="index">
-              <i :title="message.date">{{ message.date.split('T')[1].slice(0, -2) }}</i>: {{ message.text }}
+          <ul ref="messages" class="messages">
+            <li v-for="(msg, index) in messages" :key="index" class="message">
+              <i :title="msg.date">
+                {{ msg.date.split('T')[1].slice(0, -2) }}
+              </i>: {{ msg.text }}
             </li>
           </ul>
         </div>
-        <input class="inputMessage" type="text" v-model="message" @keyup.enter="sendMessage" placeholder="Type here..." />
+        <input v-model="message" class="inputMessage" type="text" placeholder="Type here..." @keyup.enter="sendMessage">
       </li>
     </ul>
   </div>
@@ -19,29 +21,29 @@
 import socket from '~/plugins/socket.io.js'
 
 export default {
-  asyncData(context, callback) {
-    socket.emit('last-messages', function (messages) {
-      callback(null, {
-        messages,
-        message: ''
-      })
-    })
+  asyncData () {
+    return new Promise(resolve =>
+      socket.emit('last-messages', messages => resolve({ messages }))
+    )
+  },
+  data () {
+    return { message: '' }
   },
   watch: {
-    'messages': 'scrollToBottom'
+    messages: 'scrollToBottom'
   },
-  beforeMount() {
+  beforeMount () {
     socket.on('new-message', (message) => {
       this.messages.push(message)
     })
   },
-  mounted() {
+  mounted () {
     this.scrollToBottom()
   },
   methods: {
-    sendMessage() {
-      if (!this.message.trim()) return
-      let message = {
+    sendMessage () {
+      if (!this.message.trim()) { return }
+      const message = {
         date: new Date().toJSON(),
         text: this.message.trim()
       }
@@ -49,7 +51,7 @@ export default {
       this.message = ''
       socket.emit('send-message', message)
     },
-    scrollToBottom() {
+    scrollToBottom () {
       this.$nextTick(() => {
         this.$refs.messages.scrollTop = this.$refs.messages.scrollHeight
       })

@@ -1,13 +1,15 @@
 <template>
   <div>
     <p>Hi from {{ name }}</p>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <NLink to="/">
+      Home page
+    </NLink>
   </div>
 </template>
 
 <script>
 export default {
-  asyncData() {
+  asyncData () {
     return {
       name: process.static ? 'static' : (process.server ? 'server' : 'client')
     }

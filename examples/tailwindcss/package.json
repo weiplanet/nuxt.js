@@ -1,10 +1,11 @@
 {
-  "name": "nuxt-tailwindcss",
+  "name": "example-tailwindcss",
   "description": "Nuxt.js with Tailwind CSS",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "post-update": "yarn upgrade --latest"
   },
   "dependencies": {
     "nuxt": "latest"
